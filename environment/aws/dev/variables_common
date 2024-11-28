@@ -1,0 +1,114 @@
+variable "project_name" {
+  description = "Project name"
+  type        = string
+}
+
+variable "environment" {
+  description = "Environment name"
+  type        = string
+}
+
+variable "vpc_cidr" {
+  description = "CIDR block for the VPC"
+  type        = string
+}
+
+variable "public_subnet_count" {
+  description = "Number of public subnets"
+  type        = number
+}
+
+variable "private_subnet_count" {
+  description = "Number of private subnets"
+  type        = number
+}
+
+variable "public_subnet_cidrs" {
+  description = "CIDR blocks for public subnets"
+  type        = list(string)
+}
+
+variable "private_subnet_cidrs" {
+  description = "CIDR blocks for private subnets"
+  type        = list(string)
+}
+
+variable "ami_id" {
+  description = "AMI ID for EC2 instances"
+  type        = string
+}
+
+variable "instance_count" {
+  description = "Number of EC2 instances"
+  type        = number
+}
+
+variable "instance_type" {
+  description = "Instance type for EC2 instances"
+  type        = string
+}
+
+variable "force_destroy" {
+  description = "Force destroy bucket on deletion"
+  type        = bool
+}
+
+variable "enable_versioning" {
+  description = "Enable versioning for the S3 bucket"
+  type        = bool
+}
+
+variable "encryption_algorithm" {
+  description = "Encryption algorithm for S3 bucket"
+  type        = string
+}
+
+variable "enable_lifecycle_rules" {
+  description = "Enable lifecycle rules for the bucket"
+  type        = bool
+}
+
+variable "lifecycle_transition_days" {
+  description = "Number of days after which to transition objects to a different storage class"
+  type        = number
+}
+
+variable "lifecycle_storage_class" {
+  description = "Storage class to transition objects to"
+  type        = string
+}
+
+variable "lifecycle_expiration_days" {
+  description = "Number of days after which objects expire"
+  type        = number
+}
+
+variable "noncurrent_version_expiration_days" {
+  description = "Number of days after which noncurrent object versions expire"
+  type        = number
+}
+
+variable "acl" {
+  description = "Access control list for the bucket"
+  type        = string
+}
+
+variable "policy_json" {
+  description = "JSON policy to apply to the bucket"
+  type        = string
+}
+
+variable "budget_limit" {
+  description = "Budget limit in USD"
+  type        = string
+}
+
+variable "notification_threshold" {
+  description = "Threshold for notifications as a percentage"
+  type        = number
+}
+
+variable "notification_email" {
+  description = "Email address to send budget notifications"
+  type        = string
+}
